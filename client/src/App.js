@@ -15,6 +15,7 @@ const App = () => {
         .get('http://localhost:5000/api/movies')
         .then(response => {
           setMovieList(response.data);
+          console.log(response.data);
         })
         .catch(error => {
           console.error('Server Error', error);
@@ -29,10 +30,13 @@ const App = () => {
 
   return (
     <div>
+      // working of the Stretch
      <SavedList list={[ /* This is stretch */]} />
       {/* link for the home nav button that takes to the movie list */}
       {/* <Link to="/">Home</Link> */}
-      {/* routes to components here */}
+      {/* routes to components here */} 
+
+
       <Switch>
       <Route exact path="/">
         <MovieList movies={movieList} />
